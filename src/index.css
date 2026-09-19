@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: black;
+}
+
+/* PAGE TRANSITION */
+
+.page-transition {
+  width: 100%;
+  min-height: 100vh;
+  animation: pageEnter 0.7s ease-in-out;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ROMANTIC BACKGROUND */
+
+.romantic-background {
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(236, 72, 153, 0.22),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(168, 85, 247, 0.22),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(244, 63, 94, 0.18),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #120018,
+      #08000f,
+      #17001f,
+      #050008
+    );
+
+  background-size: 200% 200%;
+  animation: romanticGradient 12s ease-in-out infinite;
+}
+
+@keyframes romanticGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* GLOWING ORBS */
+
+@keyframes romanticOrb {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translate(35px, -25px) scale(1.15);
+    opacity: 0.7;
+  }
+}
+
+.animate-romantic-orb {
+  animation: romanticOrb 8s ease-in-out infinite;
+}
+
+.animate-romantic-orb-delayed {
+  animation: romanticOrb 10s ease-in-out infinite reverse;
+}
+
+/* FLOATING HEARTS */
+
+@keyframes floatingHeart {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.5;
+  }
+
+  70% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(-110vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+.animate-floating-heart {
+  animation-name: floatingHeart;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* CENTER HEART */
+
+@keyframes heartGlow {
+  0%,
+  100% {
+    transform: translateX(0) scale(1);
+    filter: drop-shadow(0 0 5px rgba(255, 80, 150, 0.4));
+  }
+
+  50% {
+    transform: translateX(0) scale(1.18);
+    filter: drop-shadow(0 0 25px rgba(255, 80, 150, 0.9));
+  }
+}
+
+.animate-heart-glow {
+  animation: heartGlow 1.8s ease-in-out infinite;
+}
+
+/* PASSWORD SHAKE */
+
+@keyframes passwordShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-8px);
+  }
+
+  40% {
+    transform: translateX(8px);
+  }
+
+  60% {
+    transform: translateX(-6px);
+  }
+
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+.animate-password-shake {
+  animation: passwordShake 0.5s ease-in-out;
+}
+
+/* UNLOCK HEART */
+
+@keyframes unlockHeart {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    filter: drop-shadow(0 0 0 rgba(255, 70, 150, 0));
+  }
+
+  45% {
+    transform: scale(1.3);
+    opacity: 1;
+    filter: drop-shadow(0 0 35px rgba(255, 70, 150, 0.9));
+  }
+
+  70% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(255, 70, 150, 0.6));
+  }
+}
+
+.unlock-main-heart {
+  font-size: 80px;
+  animation: unlockHeart 1.4s ease-out forwards;
+}
+
+/* UNLOCK SPARKLES */
+
+@keyframes unlockSparkle {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.4) rotate(90deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.8) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.unlock-sparkle {
+  position: absolute;
+  font-size: 24px;
+  animation: unlockSparkle 1.8s ease-in-out infinite;
+}
+
+.sparkle-one {
+  top: -10px;
+  left: 10px;
+}
+
+.sparkle-two {
+  top: 20px;
+  right: 0;
+  animation-delay: 0.5s;
+}
+
+.sparkle-three {
+  bottom: 10px;
+  left: 30px;
+  animation-delay: 0.9s;
+}
+
+/* UNLOCK FLOATING HEARTS */
+
+.unlock-heart {
+  position: absolute;
+  bottom: -40px;
+  color: rgba(244, 114, 182, 0.35);
+  font-size: 24px;
+
+  animation:
+    unlockFloatingHeart
+    7s
+    ease-in-out
+    infinite;
+}
+
+@keyframes unlockFloatingHeart {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(-110vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* UNLOCK TEXT */
+
+@keyframes unlockText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-unlock-text {
+  animation: unlockText 1.2s ease-out 0.8s both;
+}
+
+.animate-unlock-subtext {
+  animation: unlockText 1.2s ease-out 1.2s both;
+}
+
+/* CANDLE FLAME */
+
+@keyframes flame {
+  0%,
+  100% {
+    transform: scale(0.9) rotate(-3deg);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.15) rotate(3deg);
+    opacity: 1;
+  }
+}
+
+.animate-flame {
+  animation: flame 0.35s ease-in-out infinite alternate;
+}
+
+/* FIREWORK CORE */
+
+@keyframes fireworkCore {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  20% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}
+
+.firework-core {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+
+  box-shadow:
+    0 0 10px white,
+    0 0 25px white;
+
+  transform: translate(-50%, -50%);
+
+  animation: fireworkCore 1.5s ease-out forwards;
+}
+
+/* FIREWORK PARTICLES */
+
+@keyframes fireworkParticle {
+  0% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translateX(0);
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translateX(var(--distance));
+  }
+}
+
+.firework-particle {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 3px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 0 6px white,
+    0 0 12px rgba(255, 105, 180, 0.8);
+
+  transform-origin: 50% 0;
+
+  animation:
+    fireworkParticle
+    1.5s
+    ease-out
+    forwards;
+}
+
+.cormorant-garamond {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+}
