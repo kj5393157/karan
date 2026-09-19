@@ -1,10 +1,10 @@
 const photos = [
-  "/photo1.jpeg",
-  "/photo2.jpeg",
-  "/photo3.png",
-  "/photo4.jpeg",
-  "/photo5.jpeg",
-  "/photo6.jpeg",
+  "/karan/photo1.jpeg",
+  "/karan/photo2.jpeg",
+  "/karan/photo3.png",
+  "/karan/photo4.jpeg",
+  "/karan/photo5.jpeg",
+  "/karan/photo6.jpeg",
 ];
 
 const stars = Array.from({ length: 40 }, (_, index) => ({
