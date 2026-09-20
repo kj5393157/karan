@@ -2,27 +2,27 @@ import { useState } from "react";
 
 const memories = [
   {
-    image: "/photo1.jpeg",
-    caption: "The beginning of many beautiful memories... 🌻💗",
+    image: "/karan/photo1.jpeg",
+    caption: "The beginning of beautiful memories... 🌻💗",
   },
   {
-    image: "/photo2.jpeg",
+    image: "/karan/photo2.jpeg",
     caption: "💕",
   },
   {
-    image: "/photo3.png",
+    image: "/karan/photo3.png",
     caption: "🖤✨",
   },
   {
-    image: "/photo4.jpeg",
+    image: "/karan/photo4.jpeg",
     caption: "💗",
   },
   {
-    image: "/photo5.jpeg",
+    image: "/karan/photo5.jpeg",
     caption: "🤍",
   },
   {
-    image: "/photo6.jpeg",
+    image: "/karan/photo6.jpeg",
     caption: "Some memories never fade. 💟🧿",
   },
 ];
@@ -55,7 +55,7 @@ function MemoryJourney({ onNext }) {
         </p>
 
         <h1 className="text-3xl sm:text-5xl font-bold text-pink-400">
-         To a Special One..🫶🧿
+          To a Special One..🫶🧿
         </h1>
 
         <div className="mt-10">
