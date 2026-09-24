@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const memories = [
   {
@@ -29,15 +29,26 @@ const memories = [
 
 function MemoryJourney({ onNext }) {
   const [current, setCurrent] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  // Preload all memory images
+  useEffect(() => {
+    memories.forEach((memory) => {
+      const img = new Image();
+      img.src = memory.image;
+    });
+  }, []);
 
   const nextMemory = () => {
     if (current < memories.length - 1) {
+      setImageLoaded(false);
       setCurrent(current + 1);
     }
   };
 
   const previousMemory = () => {
     if (current > 0) {
+      setImageLoaded(false);
       setCurrent(current - 1);
     }
   };
@@ -60,12 +71,25 @@ function MemoryJourney({ onNext }) {
 
         <div className="mt-10">
 
-          <div className="mx-auto max-w-md overflow-hidden rounded-2xl border-4 border-white/80 shadow-2xl">
+          <div className="mx-auto max-w-md overflow-hidden rounded-2xl border-4 border-white/80 shadow-2xl relative">
+
+            {!imageLoaded && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/60 z-10">
+                <div className="text-pink-300 text-sm animate-pulse">
+                  Loading memory... ❤️
+                </div>
+              </div>
+            )}
+
             <img
               src={memory.image}
               alt={`Memory ${current + 1}`}
-              className="w-full aspect-square object-cover"
+              onLoad={() => setImageLoaded(true)}
+              className={`w-full aspect-square object-cover transition-opacity duration-300 ${
+                imageLoaded ? "opacity-100" : "opacity-0"
+              }`}
             />
+
           </div>
 
           <p className="mt-6 min-h-16 text-lg sm:text-xl text-gray-300">

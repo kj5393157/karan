@@ -593,6 +593,12 @@ function Letter({ onNext }) {
               happiness, every success, and every beautiful moment
               in life. ✨
             </p>
+            
+            <p>
+              May god bless you with more than you deserve 
+              better than you expected.., 
+              and sooner than you imagined...!
+            </p>
 
             <p>
               Thank you for being such an amazing person. 💗
