@@ -38,7 +38,7 @@ function BirthdayMessage({ onNext }) {
       <div className="max-w-2xl text-center">
 
         <div className="text-5xl sm:text-6xl mb-6 animate-pulse">
-          🎂✨
+          
         </div>
 
         <h1 className="text-3xl sm:text-5xl font-bold text-pink-400">
